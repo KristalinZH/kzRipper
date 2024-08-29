@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35027.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "kzRip", "kzRip\kzRip.csproj", "{DA500F37-2BE6-4B0F-9391-95CA342F7A56}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DA500F37-2BE6-4B0F-9391-95CA342F7A56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA500F37-2BE6-4B0F-9391-95CA342F7A56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA500F37-2BE6-4B0F-9391-95CA342F7A56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA500F37-2BE6-4B0F-9391-95CA342F7A56}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {96CEBE57-2303-4C2D-A925-F85B696AC57D}
+	EndGlobalSection
+EndGlobal
