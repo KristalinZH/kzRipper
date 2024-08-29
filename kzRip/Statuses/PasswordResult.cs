@@ -1,21 +1,18 @@
-﻿namespace kzRip
+﻿namespace kzRip.StatusClasses
 {
-    public class PasswordResult
+    internal class PasswordResult
     {
         public PasswordResult()
         {
             IsPasswordCorrect = false;
             Password = string.Empty;
-            Message = string.Empty;
         }
-        public PasswordResult(bool result, string password, string message)
+        public PasswordResult(bool result, string password)
         {
             IsPasswordCorrect = result;
             Password = password;
-            Message = message;
         }
         public bool IsPasswordCorrect { get; }
         public string Password { get; }
-        public string Message { get; }
     }
 }
