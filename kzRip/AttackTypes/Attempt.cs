@@ -15,7 +15,7 @@
 
                 if (entry == null)
                 {
-                    return new PasswordResult(true, string.Empty);
+                    return new PasswordResult(true, string.Empty, "The archive is empty!");
                 }
 
                 try
@@ -27,11 +27,23 @@
                 }
                 catch (Exception)
                 {
-                    return new PasswordResult(false, password);
+                    return new PasswordResult(false, password, "Invalid password!");
                 }
             }
 
-            return new PasswordResult(true, password);
+            return new PasswordResult(true, password, "Password found!");
+        }
+        internal static bool ArchiveExists(string path)
+        {
+            try
+            {
+                using (RarArchive archive = RarArchive.Open(path)) { }
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
     }
 }
