@@ -11,15 +11,15 @@
         {
             using (RarArchive archive = RarArchive.Open(path, new ReaderOptions() { Password = password }))
             {
-                RarArchiveEntry? entry = archive.Entries.FirstOrDefault();
-
-                if (entry == null)
-                {
-                    return new PasswordResult(true, string.Empty, "The archive is empty!");
-                }
-
                 try
                 {
+                    RarArchiveEntry? entry = archive.Entries.FirstOrDefault();
+
+                    if (entry == null)
+                    {
+                        return new PasswordResult(true, string.Empty, "The archive is empty!");
+                    }
+
                     using (MemoryStream stream = new MemoryStream())
                     {
                         entry.WriteTo(stream);
