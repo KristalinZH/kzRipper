@@ -1,10 +1,12 @@
 ﻿namespace kzRip.AttackTypes.BruteForce
 {
-    using System.Text;
-
     using StatusClasses;
 
+    using Characters;
+
+    using static Characters.Characters;
     using static Attempt;
+
     internal static class BruteForce
     {
         private static volatile bool ShouldStop = false;
@@ -40,9 +42,10 @@
         //            password.Remove(currentIndex, 1);
         //    }
         //}
-        internal static void GeneratePassword(string password, int currentIndex, int length)
+
+        internal static void GeneratePassword(string password, string[] characters, int length)
         {
-            if (currentIndex == length || currentIndex > length)
+            if (password.Length == length || password.Length > length)
             {
                 PasswordResult result = TryPassword(Path, password);
 
@@ -55,7 +58,7 @@
                 return;
             }
 
-            Parallel.For(32, 127, (i, state) =>
+            Parallel.For(0, characters.Length, (i, state) =>
             {
                 if (ShouldStop)
                 {
@@ -63,10 +66,10 @@
                     return;
                 }
 
-                GeneratePassword(string.Concat(password, ((char)i).ToString()), currentIndex + 1, length);
+                GeneratePassword(string.Concat(password, characters[i]), characters, length);
             });
         }
-        internal static PasswordResult BruteRip(string path, int minPasswordLength = 0, int maxPasswordLength = 50)
+        internal static PasswordResult BruteRip(string path, CharactersType flags, int maxPasswordLength = 50, int minPasswordLength = 0)
         {
             if (!ArchiveExists(path))
             {
@@ -74,9 +77,11 @@
             }
 
             Path = path;
+            string[] characters = GetCharacters(flags);
+
             for (int i = minPasswordLength; i <= maxPasswordLength; i++)
             {
-                GeneratePassword(string.Empty, 0, i);
+                GeneratePassword(string.Empty, characters, i);
 
                 if (Result.IsPasswordCorrect)
                     break;
