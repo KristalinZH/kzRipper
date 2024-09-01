@@ -12,37 +12,6 @@
         private static volatile bool ShouldStop = false;
         private static string Path = string.Empty;
         private static volatile PasswordResult Result = new PasswordResult();
-
-        //Old syncrhonous password generation
-        //internal static void GeneratePassword(StringBuilder password, int currentIndex, int length)
-        //{
-        //    if (currentIndex == length || currentIndex > length)
-        //    {
-        //        PasswordResult result = TryPassword(Path, password.ToString());
-
-        //        if (result.IsPasswordCorrect)
-        //        {
-        //            ShouldStop = true;
-        //            Result = result;
-        //        }
-
-        //        return;
-        //    }
-
-        //    for (int i = 32; i <= 126; i++)
-        //    {
-        //        if (ShouldStop)
-        //        {
-        //            return;
-        //        }
-
-        //        password.Append((char)i);
-        //        GeneratePassword(password, currentIndex + 1, length);
-        //        if (password.Length != 0)
-        //            password.Remove(currentIndex, 1);
-        //    }
-        //}
-
         private static void GeneratePassword(string password, string[] characters, int length)
         {
             if (password.Length == length || password.Length > length)
