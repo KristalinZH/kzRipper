@@ -12,8 +12,4 @@
     <PackageReference Include="SharpCompress" Version="0.37.2" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="AttackTypes\Dictionary\" />
-  </ItemGroup>
-
 </Project>

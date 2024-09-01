@@ -43,7 +43,7 @@
         //    }
         //}
 
-        internal static void GeneratePassword(string password, string[] characters, int length)
+        private static void GeneratePassword(string password, string[] characters, int length)
         {
             if (password.Length == length || password.Length > length)
             {
@@ -71,7 +71,7 @@
         }
         internal static PasswordResult BruteRip(string path, CharactersType flags, int maxPasswordLength = 50, int minPasswordLength = 0)
         {
-            if (!ArchiveExists(path))
+            if (!File.Exists(path))
             {
                 return new PasswordResult(false, string.Empty, "Archive doesn't exist!");
             }

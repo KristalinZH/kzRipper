@@ -33,17 +33,5 @@
 
             return new PasswordResult(true, password, "Password found!");
         }
-        internal static bool ArchiveExists(string path)
-        {
-            try
-            {
-                using (RarArchive archive = RarArchive.Open(path)) { }
-                return true;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
-        }
     }
 }
