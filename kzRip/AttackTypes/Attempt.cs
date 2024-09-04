@@ -20,6 +20,11 @@
                         return new PasswordResult(true, string.Empty, "The archive is empty!");
                     }
 
+                    if (!entry.IsEncrypted)
+                    {
+                        return new PasswordResult(true, string.Empty, "There is no password!");
+                    }
+
                     using (MemoryStream stream = new MemoryStream())
                     {
                         entry.WriteTo(stream);
