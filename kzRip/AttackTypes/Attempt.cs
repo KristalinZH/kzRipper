@@ -4,7 +4,7 @@
     using SharpCompress.Archives;
     using SharpCompress.Archives.Rar;
 
-    using StatusClasses;
+    using Statuses;
     internal static class Attempt
     {
         internal static PasswordResult TryPassword(string path, string password)

@@ -1,6 +1,6 @@
 ﻿namespace kzRip.AttackTypes.BruteForce
 {
-    using StatusClasses;
+    using Statuses;
 
     using Characters;
 
@@ -11,7 +11,7 @@
     {
         private static volatile bool ShouldStop = false;
         private static string Path = string.Empty;
-        private static volatile PasswordResult Result = new PasswordResult();
+        private static volatile PasswordResult Result = new PasswordResult(false, string.Empty, "Password not found!");
         private static void GeneratePassword(string password, string[] characters, int length)
         {
             if (password.Length == length || password.Length > length)
@@ -42,7 +42,7 @@
         {
             if (!File.Exists(path))
             {
-                return new PasswordResult(false, string.Empty, "Archive doesn't exist!");
+                return new PasswordResult(false, string.Empty, $"Archive {path} doesn't exist!");
             }
 
             Path = path;

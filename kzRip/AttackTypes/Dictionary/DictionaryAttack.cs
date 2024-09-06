@@ -1,6 +1,6 @@
 ﻿namespace kzRip.AttackTypes.Dictionary
 {
-    using StatusClasses;
+    using Statuses;
 
     using static Attempt;
     internal static class DictionaryAttack
@@ -22,12 +22,12 @@
         {
             if (!File.Exists(pathRar))
             {
-                return new PasswordResult(false, string.Empty, "Archive doesn't exist!");
+                return new PasswordResult(false, string.Empty, $"Archive {pathRar} doesn't exist!");
             }
 
             if (!File.Exists(pathDictionary))
             {
-                return new PasswordResult(false, string.Empty, "Dictionary file doesn't exist!");
+                return new PasswordResult(false, string.Empty, $"Dictionary file {pathDictionary} doesn't exist!");
             }
 
             string fileFormat = Path.GetExtension(pathDictionary);

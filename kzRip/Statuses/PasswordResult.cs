@@ -1,4 +1,4 @@
-﻿namespace kzRip.StatusClasses
+﻿namespace kzRip.Statuses
 {
     internal class PasswordResult
     {
