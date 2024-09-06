@@ -49,6 +49,8 @@
             string pathArchive = Path.IsPathRooted(args[0]) ? args[0] : $@"{Directory.GetCurrentDirectory()}\{args[0]}";
             string pathDictionary = Path.IsPathRooted(args[1]) ? args[1] : $@"{Directory.GetCurrentDirectory()}\{args[1]}";
 
+            Console.WriteLine("Starting attack...");
+
             PasswordResult result = DictionaryAttack.DictionaryRip(pathArchive, pathDictionary);
 
             if (result.IsPasswordCorrect)

@@ -166,6 +166,8 @@
 
             PasswordResult result = null!;
 
+            Console.WriteLine("Starting attack...");
+
             if (args.Length == 1)
             {
                 result = BruteForce.BruteRip(path, CharactersType.Default);
