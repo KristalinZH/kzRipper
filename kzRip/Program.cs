@@ -7,6 +7,12 @@
     {
         static void Main(string[] args)
         {
+            Console.CancelKeyPress += (sender, eventArgs) =>
+            {
+                Console.WriteLine("\nTerminating process...");
+                Environment.Exit(0);
+            };
+
             if (args.Length == 0 || args[0] == "-h" || args[0] == "--help")
             {
                 Help();
