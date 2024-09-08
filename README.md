@@ -29,10 +29,10 @@ If you wish to specify what characters to be used in passwords and set limits to
 
 | Option   | Description |
 |----------|-------------|
-| `-d, --digits`   | Use digits in passwords |
-| `-l, --lower`   | Use lowercase letters in passwords |
-| `-u, --upper`   | Use uppercase letters in passwords |
-| `-r, --range`   | Set passwords length. First argument sets the minimal length, second sets maximal length. If there is one, it sets the maximal length. |
+|`-d, --digits`   | Use digits in passwords |
+|`-l, --lower`   | Use lowercase letters in passwords |
+|`-u, --upper`   | Use uppercase letters in passwords |
+|`-r, --range`   | Set passwords length. First argument sets the minimal length, second sets maximal length. If there is one, it sets the maximal length. |
 
 ### Dictionary
 
